@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cbmkqby1gj7va"]
+
+[ext_resource type="AudioStream" uid="uid://s4guj0yvx3x8" path="res://assets/sounds/squash_toy.ogg" id="1_3txi7"]
+[ext_resource type="Script" uid="uid://d0m85xkqref8w" path="res://scripts/effects/fx.gd" id="2_ur3eh"]
+
+[node name="SquashFX" type="AudioStreamPlayer" unique_id=1281628499]
+stream = ExtResource("1_3txi7")
+autoplay = true
+bus = &"Sounds"
+script = ExtResource("2_ur3eh")

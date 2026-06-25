@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cr21y4nf3c6mx"]
+
+[ext_resource type="Script" uid="uid://dmcn5h3a66ppp" path="res://scripts/gameplay/buy_upgrade_button.gd" id="1_l31x8"]
+
+[node name="BuyUpgradeButton" type="PanelContainer" unique_id=1627976743]
+custom_minimum_size = Vector2(0, 110)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l31x8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1140608194]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=908633742]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.5
+theme_type_variation = &"secondary_panel"
+
+[node name="Button" type="Button" parent="HBoxContainer/PanelContainer" unique_id=2080660915]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/Button" unique_id=1995708686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/Button/MarginContainer" unique_id=1081290893]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="HBoxContainer/PanelContainer/Button/MarginContainer/VBoxContainer" unique_id=428038655]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"title_label"
+text = "Coffee"
+
+[node name="Description" type="Label" parent="HBoxContainer/PanelContainer/Button/MarginContainer/VBoxContainer" unique_id=862108002]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"description_label"
+text = "Increase work speed by 1%"
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer" unique_id=529460845]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer2" unique_id=438594558]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer2/MarginContainer" unique_id=1825390089]
+layout_mode = 2
+
+[node name="Price" type="Label" parent="HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1987645408]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"price_label"
+text = "13.55"
+horizontal_alignment = 1
+
+[node name="Level" type="ProgressBar" parent="HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=642717461]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+theme_type_variation = &"level_progress"
+max_value = 10.0
+value = 5.0
+show_percentage = false

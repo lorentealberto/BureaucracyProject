@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://q15k1kr2xoyd"]
+
+[ext_resource type="Script" uid="uid://4dr1k74vdfqo" path="res://upgrades/upgrade.gd" id="1_7ggqm"]
+
+[resource]
+script = ExtResource("1_7ggqm")
+ui_name = "Coffee"
+description = "Makes you a faster worker"
+base_stat = 1
+cost = 13.5
+max_value = 10
+bonus = 0.01
+metadata/_custom_type_script = "uid://4dr1k74vdfqo"

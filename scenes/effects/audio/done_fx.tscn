@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bi1ut1fb16adm"]
+
+[ext_resource type="Script" uid="uid://d0m85xkqref8w" path="res://scripts/effects/fx.gd" id="1_8eikn"]
+[ext_resource type="AudioStream" uid="uid://c4h6g24vd1mk4" path="res://assets/sounds/done.ogg" id="1_avkge"]
+
+[node name="DoneFx" type="AudioStreamPlayer" unique_id=850598401]
+stream = ExtResource("1_avkge")
+autoplay = true
+bus = &"Sounds"
+script = ExtResource("1_8eikn")

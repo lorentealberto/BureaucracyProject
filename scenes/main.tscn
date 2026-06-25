@@ -1,0 +1,241 @@
+[gd_scene format=3 uid="uid://dbqstueil768o"]
+
+[ext_resource type="Texture2D" uid="uid://dmvwqmh0j0rxa" path="res://assets/graphics/first_background.png" id="1_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://d03ndhiqdhkx0" path="res://assets/graphics/central_panel.png" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://cpolx21xyfsag" path="res://assets/graphics/left_panel.png" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://cl2e8as65mrrk" path="res://assets/graphics/right_panel/panel.png" id="4_muem4"]
+[ext_resource type="Theme" uid="uid://de2e0xv0xu1ui" path="res://assets/themes/main.tres" id="4_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://bmradrrwjxvnt" path="res://assets/graphics/right_panel/background.png" id="5_dp3eg"]
+[ext_resource type="Script" uid="uid://dexqkr4kxtki5" path="res://scripts/gameplay/upgrades_list.gd" id="5_y6deb"]
+[ext_resource type="Texture2D" uid="uid://boyq7ths1o4uc" path="res://assets/graphics/right_panel/heads.png" id="6_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://m4we3ponxsx4" path="res://scenes/prefabs/eye.tscn" id="6_eb6dy"]
+[ext_resource type="Script" uid="uid://b2syqu0eq4mje" path="res://scripts/gameplay/official.gd" id="6_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://b3c11wts4rydj" path="res://scenes/components/toy_component.tscn" id="7_0ld40"]
+[ext_resource type="Texture2D" uid="uid://lrsagbnhkbxp" path="res://assets/graphics/queue.png" id="8_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://cwl4imxpf8g7s" path="res://assets/graphics/right_panel/no_face.png" id="8_gqmmt"]
+[ext_resource type="Script" uid="uid://b0mtqrrmogjpa" path="res://scripts/gameplay/queue.gd" id="9_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://dtwqknpwjuvb6" path="res://assets/graphics/right_panel/hairy_ball.png" id="9_yc10j"]
+[ext_resource type="PackedScene" uid="uid://bjyojf4lsf0ll" path="res://scenes/prefabs/customer.tscn" id="10_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://dmb21xd6e0k6m" path="res://assets/graphics/right_panel/isaac.png" id="10_jscy8"]
+[ext_resource type="Texture2D" uid="uid://bw17omeyd628g" path="res://assets/graphics/bell.png" id="10_trceg"]
+[ext_resource type="Script" uid="uid://blx2exwikkyxe" path="res://scripts/gameplay/bell.gd" id="11_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://dcof52qb63he" path="res://scenes/prefabs/job_timer.tscn" id="12_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://dwb8ufjg5xrbg" path="res://scenes/effects/audio/bell_fx.tscn" id="12_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://4c0cnjqtba1e" path="res://assets/graphics/man.png" id="12_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://dge4uomlkxuy2" path="res://assets/graphics/right_panel/desktop.png" id="17_0ld40"]
+[ext_resource type="Texture2D" uid="uid://4xrfknen600e" path="res://assets/graphics/hand.png" id="19_y6deb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ld40"]
+radius = 19.0
+height = 114.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yc10j"]
+radius = 15.0
+height = 74.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jscy8"]
+radius = 15.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pm3ni"]
+radius = 11.0
+height = 66.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pm3ni"]
+radius = 20.024984
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jkv2x"]
+radius = 32.0
+
+[sub_resource type="Animation" id="Animation_muem4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -48)]
+}
+
+[sub_resource type="Animation" id="Animation_dp3eg"]
+resource_name = "press"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -48), Vector2(0, -32), Vector2(0, -48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ld40"]
+_data = {
+&"RESET": SubResource("Animation_muem4"),
+&"press": SubResource("Animation_dp3eg")
+}
+
+[node name="Main" type="Node2D" unique_id=1017691278]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1927233187]
+texture_repeat = 2
+texture = ExtResource("1_eb6dy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="Layout" type="Node2D" parent="." unique_id=516062755]
+
+[node name="CentralPanel" type="Sprite2D" parent="Layout" unique_id=2137173474]
+position = Vector2(960, 540)
+texture = ExtResource("2_jyhfs")
+
+[node name="Upgrades" type="Node2D" parent="Layout" unique_id=1868328582]
+position = Vector2(552, 568)
+
+[node name="LeftPanel" type="Sprite2D" parent="Layout/Upgrades" unique_id=941377617]
+texture = ExtResource("3_tbgi4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Layout/Upgrades" unique_id=144020677]
+
+[node name="MarginContainer" type="MarginContainer" parent="Layout/Upgrades/CanvasLayer" unique_id=1792048030]
+anchors_preset = -1
+anchor_right = 0.082
+anchor_bottom = 0.20400001
+offset_left = 221.0
+offset_top = 423.0
+offset_right = 727.56
+offset_bottom = 561.68
+theme = ExtResource("4_pm3ni")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Layout/Upgrades/CanvasLayer/MarginContainer" unique_id=1217060103]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Layout/Upgrades/CanvasLayer/MarginContainer/ScrollContainer" unique_id=2037160613]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+script = ExtResource("5_y6deb")
+
+[node name="Office" type="Node2D" parent="Layout" unique_id=668386373]
+position = Vector2(1280, 536)
+
+[node name="RightPanel" type="Sprite2D" parent="Layout/Office" unique_id=1984968009]
+texture = ExtResource("4_muem4")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="Layout/Office/RightPanel" unique_id=889811325]
+position = Vector2(0, -15)
+texture = ExtResource("5_dp3eg")
+
+[node name="Teddies" type="Node" parent="Layout/Office/RightPanel" unique_id=1621511601]
+
+[node name="HeadsTeddy" type="Sprite2D" parent="Layout/Office/RightPanel/Teddies" unique_id=103257773]
+position = Vector2(1481, 507)
+texture = ExtResource("6_dp3eg")
+offset = Vector2(0, -20)
+
+[node name="ToyComponent" parent="Layout/Office/RightPanel/Teddies/HeadsTeddy" unique_id=1521073474 instance=ExtResource("7_0ld40")]
+position = Vector2(0, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layout/Office/RightPanel/Teddies/HeadsTeddy/ToyComponent" unique_id=1910125320]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_0ld40")
+
+[node name="NoFaceTeddy" type="Sprite2D" parent="Layout/Office/RightPanel/Teddies" unique_id=1547575568]
+position = Vector2(1306, 410)
+texture = ExtResource("8_gqmmt")
+offset = Vector2(0, -40)
+
+[node name="ToyComponent" parent="Layout/Office/RightPanel/Teddies/NoFaceTeddy" unique_id=206949480 instance=ExtResource("7_0ld40")]
+position = Vector2(0, -37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layout/Office/RightPanel/Teddies/NoFaceTeddy/ToyComponent" unique_id=36832657]
+shape = SubResource("CapsuleShape2D_yc10j")
+
+[node name="HairyBallTeddy" type="Sprite2D" parent="Layout/Office/RightPanel/Teddies" unique_id=1018532736]
+position = Vector2(1528, 602)
+texture = ExtResource("9_yc10j")
+
+[node name="ToyComponent" parent="Layout/Office/RightPanel/Teddies/HairyBallTeddy" unique_id=536466605 instance=ExtResource("7_0ld40")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layout/Office/RightPanel/Teddies/HairyBallTeddy/ToyComponent" unique_id=246898753]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_jscy8")
+
+[node name="IsaacTeddy" type="Sprite2D" parent="Layout/Office/RightPanel/Teddies" unique_id=116992474]
+position = Vector2(1393, 508)
+texture = ExtResource("10_jscy8")
+offset = Vector2(0, -27)
+
+[node name="ToyComponent" parent="Layout/Office/RightPanel/Teddies/IsaacTeddy" unique_id=883806135 instance=ExtResource("7_0ld40")]
+position = Vector2(-1, -28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layout/Office/RightPanel/Teddies/IsaacTeddy/ToyComponent" unique_id=2041499907]
+shape = SubResource("CapsuleShape2D_pm3ni")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Layout/Office/RightPanel/Teddies/IsaacTeddy/ToyComponent" unique_id=1600384186]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_pm3ni")
+
+[node name="Official" type="Sprite2D" parent="Layout/Office/RightPanel" unique_id=1473771239]
+position = Vector2(0, -130)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_pm3ni")
+offset = Vector2(0, 240)
+script = ExtResource("6_ya4ey")
+job_timer = ExtResource("12_eb6dy")
+
+[node name="Eye" parent="Layout/Office/RightPanel/Official" unique_id=866390600 instance=ExtResource("6_eb6dy")]
+position = Vector2(-82, 146)
+
+[node name="Eye2" parent="Layout/Office/RightPanel/Official" unique_id=425220063 instance=ExtResource("6_eb6dy")]
+position = Vector2(82, 146)
+
+[node name="Bell" type="Sprite2D" parent="Layout/Office/RightPanel" unique_id=719946007]
+position = Vector2(72, 24)
+texture = ExtResource("10_trceg")
+script = ExtResource("11_a8y0u")
+bell_sfx = ExtResource("12_jkv2x")
+
+[node name="Area2D" type="Area2D" parent="Layout/Office/RightPanel/Bell" unique_id=1590083731]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layout/Office/RightPanel/Bell/Area2D" unique_id=2053230180]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_jkv2x")
+
+[node name="Hand" type="Sprite2D" parent="Layout/Office/RightPanel/Bell" unique_id=1204595643]
+position = Vector2(0, -48)
+rotation = 1.5707964
+texture = ExtResource("19_y6deb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Layout/Office/RightPanel/Bell" unique_id=1706202873]
+libraries/ = SubResource("AnimationLibrary_0ld40")
+
+[node name="Queue" type="Sprite2D" parent="Layout/Office/RightPanel" unique_id=1951753553]
+z_index = 1
+position = Vector2(0, 92)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_a8y0u")
+offset = Vector2(0, 232)
+script = ExtResource("9_jkv2x")
+customer = ExtResource("10_jbj1t")
+
+[node name="Timer" type="Timer" parent="Layout/Office/RightPanel/Queue" unique_id=455102379]
+one_shot = true
+
+[node name="Desktop" type="Sprite2D" parent="Layout/Office/RightPanel" unique_id=905664983]
+position = Vector2(0, 86)
+texture = ExtResource("17_0ld40")

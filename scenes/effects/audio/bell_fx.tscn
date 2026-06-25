@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dwb8ufjg5xrbg"]
+
+[ext_resource type="AudioStream" uid="uid://c04j5lwjerrgt" path="res://assets/sounds/bell_ring.ogg" id="1_my6qx"]
+[ext_resource type="Script" uid="uid://d0m85xkqref8w" path="res://scripts/effects/fx.gd" id="2_ri7nv"]
+
+[node name="BellFX" type="AudioStreamPlayer" unique_id=570727386]
+stream = ExtResource("1_my6qx")
+autoplay = true
+bus = &"Sounds"
+script = ExtResource("2_ri7nv")

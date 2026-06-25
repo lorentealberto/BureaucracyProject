@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cgxtky5oo7rh"]
+
+[ext_resource type="Texture2D" uid="uid://b7bk3gao6ib78" path="res://assets/graphics/particles/white_circle.png" id="1_dat7j"]
+[ext_resource type="Script" uid="uid://c4lujvc6i0ey3" path="res://scripts/effects/sfx.gd" id="2_6twov"]
+
+[sub_resource type="Curve" id="Curve_6twov"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_uu7tn"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="JobDoneSFX" type="CPUParticles2D" unique_id=153168482]
+modulate = Color(0, 0, 0, 1)
+emitting = false
+amount = 16
+texture = ExtResource("1_dat7j")
+lifetime = 0.75
+one_shot = true
+explosiveness = 0.9
+randomness = 0.2
+emission_shape = 1
+emission_sphere_radius = 25.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 125.0
+scale_amount_curve = SubResource("Curve_6twov")
+color_ramp = SubResource("Gradient_uu7tn")
+script = ExtResource("2_6twov")

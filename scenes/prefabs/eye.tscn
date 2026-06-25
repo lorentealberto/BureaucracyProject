@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://m4we3ponxsx4"]
+
+[ext_resource type="Script" uid="uid://dp5yaxroiueiy" path="res://scripts/gameplay/eye.gd" id="1_5q8y6"]
+[ext_resource type="Texture2D" uid="uid://hk046x72nkmh" path="res://assets/graphics/eye.png" id="2_d1s8r"]
+
+[node name="Eye" type="Node2D" unique_id=866390600]
+script = ExtResource("1_5q8y6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=185762969]
+texture = ExtResource("2_d1s8r")
