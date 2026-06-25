@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cr21y4nf3c6mx"]
 
 [ext_resource type="Script" uid="uid://dmcn5h3a66ppp" path="res://scripts/gameplay/buy_upgrade_button.gd" id="1_l31x8"]
+[ext_resource type="Script" uid="uid://b2ceoxis1w1f0" path="res://scripts/gameplay/buy_button.gd" id="2_qa4ox"]
 
 [node name="BuyUpgradeButton" type="PanelContainer" unique_id=1627976743]
 custom_minimum_size = Vector2(0, 110)
@@ -21,7 +22,9 @@ size_flags_stretch_ratio = 2.5
 theme_type_variation = &"secondary_panel"
 
 [node name="Button" type="Button" parent="HBoxContainer/PanelContainer" unique_id=2080660915]
+unique_name_in_owner = true
 layout_mode = 2
+script = ExtResource("2_qa4ox")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/Button" unique_id=1995708686]
 layout_mode = 1

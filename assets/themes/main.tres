@@ -6,12 +6,17 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgokm"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7mpy8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6fsoa"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aiue4"]
-bg_color = Color(0.99665385, 0.7733905, 0.790183, 1)
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6fsoa"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fsoa"]
+bg_color = Color(0.99665385, 0.7733905, 0.790183, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_keqi6"]
 bg_color = Color(0, 0, 0, 1)
@@ -45,12 +50,14 @@ Button/font_sizes/font_size = 48
 Button/fonts/font = ExtResource("1_rrfxt")
 Button/styles/disabled = SubResource("StyleBoxEmpty_aiue4")
 Button/styles/focus = SubResource("StyleBoxEmpty_pgokm")
-Button/styles/hover = SubResource("StyleBoxFlat_aiue4")
+Button/styles/hover = SubResource("StyleBoxEmpty_7mpy8")
 Button/styles/normal = SubResource("StyleBoxEmpty_6fsoa")
 Button/styles/pressed = SubResource("StyleBoxFlat_aiue4")
 Label/colors/font_color = Color(0.2, 0.2, 0.2, 1)
 Label/font_sizes/font_size = 48
 Label/fonts/font = ExtResource("1_rrfxt")
+NoMoney/base_type = &"Button"
+NoMoney/styles/hover = SubResource("StyleBoxFlat_6fsoa")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_keqi6")
 description_label/base_type = &"Label"
 description_label/font_sizes/font_size = 24
