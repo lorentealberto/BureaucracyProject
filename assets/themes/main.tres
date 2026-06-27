@@ -15,9 +15,6 @@ bg_color = Color(1, 1, 1, 1)
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fsoa"]
-bg_color = Color(0.99665385, 0.7733905, 0.790183, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_keqi6"]
 bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 16
@@ -40,6 +37,11 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 corner_detail = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fsoa"]
+bg_color = Color(0.99665385, 0.7733905, 0.790183, 1)
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hypv3"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_right = 16
@@ -56,14 +58,14 @@ Button/styles/pressed = SubResource("StyleBoxFlat_aiue4")
 Label/colors/font_color = Color(0.2, 0.2, 0.2, 1)
 Label/font_sizes/font_size = 48
 Label/fonts/font = ExtResource("1_rrfxt")
-NoMoney/base_type = &"Button"
-NoMoney/styles/hover = SubResource("StyleBoxFlat_6fsoa")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_keqi6")
 description_label/base_type = &"Label"
 description_label/font_sizes/font_size = 24
 level_progress/base_type = &"ProgressBar"
 level_progress/styles/background = SubResource("StyleBoxFlat_pgokm")
 level_progress/styles/fill = SubResource("StyleBoxFlat_7mpy8")
+no_money/base_type = &"Button"
+no_money/styles/hover = SubResource("StyleBoxFlat_6fsoa")
 price_label/base_type = &"Label"
 price_label/colors/font_color = Color(1, 1, 1, 1)
 price_label/font_sizes/font_size = 32

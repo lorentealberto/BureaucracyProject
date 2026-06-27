@@ -1,20 +1,16 @@
 extends Button
 
 var price: float
+var _total_money: float
 
 func _ready() -> void:
+	_total_money = GameData.total_money
 	mouse_entered.connect(_on_mouse_entered)
-	mouse_exited.connect(_on_mouse_exited)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	print(price)
-
+	pressed.connect(_on_pressed)
 
 func _on_mouse_entered() -> void:
-	pass
+	if price > _total_money:
+		theme_type_variation = "no_money"
 
-
-func _on_mouse_exited() -> void:
-	pass
+func _on_pressed() -> void:
+	_total_money = GameData.total_money
