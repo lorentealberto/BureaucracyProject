@@ -1,10 +1,10 @@
 extends Button
 
-
 signal valid_transaction
 signal hover
 signal unhover
 @export var selected_fx: PackedScene
+@export var error_fx: PackedScene
 
 var price: float
 
@@ -15,10 +15,7 @@ func _ready() -> void:
 
 func _on_mouse_entered() -> void:
 	hover.emit()
-	if _check_can_afford():
-		theme_type_variation = "enough_money"
-	else:
-		theme_type_variation = "no_money"
+	change_color()
 
 func _on_mouse_exited() -> void:
 	unhover.emit()
@@ -32,4 +29,12 @@ func _on_pressed() -> void:
 		get_tree().root.call_deferred("add_child", selected_fx.instantiate())
 		valid_transaction.emit()
 	else:
-		print("Error: Cannot afford this item.")
+		get_tree().root.call_deferred("add_child", error_fx.instantiate())
+
+
+func change_color() -> bool:
+	if _check_can_afford():
+		theme_type_variation = "enough_money"
+		return true
+	theme_type_variation = "no_money"
+	return false

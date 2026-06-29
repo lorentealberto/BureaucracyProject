@@ -28,13 +28,13 @@ func set_price(upgrade_id: int) -> void:
 	button.price = _price
 	price.text = str(_price)
 
-
 func set_level(upgrade_id: int) -> void:
 	var max_level: int = UpgradesData.get_max_level(upgrade_id)
 	level.max_value = max_level
 	level.value = min(GameData.get_current_level(upgrade_id), max_level)
 
 func update_ui() -> void:
+	button.change_color()
 	set_level(id)
 	set_price(id)
 

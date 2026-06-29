@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c1n3exn7iyfx4" path="res://scripts/gameplay/buy_upgrade_button.gd" id="1_l31x8"]
 [ext_resource type="Script" uid="uid://b2ceoxis1w1f0" path="res://scripts/gameplay/buy_button.gd" id="2_qa4ox"]
 [ext_resource type="PackedScene" uid="uid://cdk68vylwpntb" path="res://scenes/effects/audio/selected_fx.tscn" id="3_vf0m5"]
+[ext_resource type="PackedScene" uid="uid://cgpi6t871abw6" path="res://scenes/effects/audio/error_fx.tscn" id="4_ngxs5"]
 
 [sub_resource type="Animation" id="Animation_vf0m5"]
 length = 0.001
@@ -89,6 +90,7 @@ unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("2_qa4ox")
 selected_fx = ExtResource("3_vf0m5")
+error_fx = ExtResource("4_ngxs5")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/Button" unique_id=1995708686]
 layout_mode = 1
