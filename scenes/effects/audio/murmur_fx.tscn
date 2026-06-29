@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c5at24y4w1ruy"]
+
+[ext_resource type="AudioStream" uid="uid://bjmyn130lsnxw" path="res://assets/sounds/murmur.ogg" id="1_83eqk"]
+[ext_resource type="Script" uid="uid://d0m85xkqref8w" path="res://scripts/effects/fx.gd" id="2_e5ue4"]
+
+[node name="MurmurFX" type="AudioStreamPlayer" unique_id=988177085]
+stream = ExtResource("1_83eqk")
+volume_db = -18.0
+autoplay = true
+bus = &"Sounds"
+script = ExtResource("2_e5ue4")

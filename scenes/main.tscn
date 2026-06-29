@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://4c0cnjqtba1e" path="res://assets/graphics/man.png" id="12_pm3ni"]
 [ext_resource type="Texture2D" uid="uid://dge4uomlkxuy2" path="res://assets/graphics/right_panel/desktop.png" id="17_0ld40"]
 [ext_resource type="Texture2D" uid="uid://4xrfknen600e" path="res://assets/graphics/hand.png" id="19_y6deb"]
+[ext_resource type="PackedScene" uid="uid://c5at24y4w1ruy" path="res://scenes/effects/audio/murmur_fx.tscn" id="25_2wyq8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wyq8"]
 
@@ -262,6 +263,7 @@ texture = ExtResource("8_a8y0u")
 offset = Vector2(0, 232)
 script = ExtResource("9_jkv2x")
 customer = ExtResource("10_jbj1t")
+murmur_fx = ExtResource("25_2wyq8")
 
 [node name="Timer" type="Timer" parent="Layout/Office/RightPanel/Queue" unique_id=455102379]
 one_shot = true

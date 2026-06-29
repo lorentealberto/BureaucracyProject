@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cdk68vylwpntb"]
+
+[ext_resource type="AudioStream" uid="uid://c1itq8t56vc0l" path="res://assets/sounds/selected.ogg" id="1_uo85c"]
+[ext_resource type="Script" uid="uid://d0m85xkqref8w" path="res://scripts/effects/fx.gd" id="2_mq5h8"]
+
+[node name="SelectedFX" type="AudioStreamPlayer" unique_id=436497895]
+stream = ExtResource("1_uo85c")
+autoplay = true
+bus = &"Sounds"
+script = ExtResource("2_mq5h8")

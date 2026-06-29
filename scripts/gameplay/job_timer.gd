@@ -9,7 +9,7 @@ class_name JobTimer
 func _ready() -> void:
 	timer.timeout.connect(increase_progress)
 	animation_player.animation_finished.connect(manage_state)
-
+	_update_data()
 
 func increase_progress() -> void:
 	value += 1
@@ -29,6 +29,8 @@ func manage_state(anim_name: String) -> void:
 		"disappear":
 			queue_free()
 
-func update_data() -> void:
-	timer.wait_time -= GameData.calculate_work_speed()
-	max_value -= GameData.calculate_total_work()
+func _update_data() -> void:
+	timer.wait_time -= UpgradesData._get_work_speed_bonus()
+	max_value -= UpgradesData._get_total_work_bonus()
+
+	print(timer.wait_time, ' ', max_value)

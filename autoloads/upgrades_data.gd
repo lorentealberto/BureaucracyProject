@@ -105,7 +105,7 @@ func get_ui_name(id: int) -> String:
 func get_description(id: int) -> String:
 	return upgrades_list[id][DESCRIPTION_ID]
 
-func get_cost(id: int) -> float:
+func get_cost(id: int) -> int:
 	return upgrades_list[id][COST_ID]
 
 func get_max_level(id: int) -> int:

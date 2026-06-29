@@ -36,5 +36,6 @@ func update_ui() -> void:
 	set_price(id)
 
 func _on_valid_transaction() -> void:
+	Events.upgrade_bought.emit()
 	UpgradesData.increase_level(id)
 	update_ui()
