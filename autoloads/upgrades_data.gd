@@ -1,5 +1,7 @@
 extends Node
 
+const grow_factor: float = 1.15
+
 enum BaseStat {
 	NONE,
 	work_speed,
@@ -94,9 +96,10 @@ func _process_upgrade_file(base_path: String, file_name: String) -> Array:
 #endregion
 
 func increase_level(upgrade_id: int) -> void:
-	if GameData.meta_upgrades[upgrade_id][1] < get_max_level(upgrade_id) or GameData.total_money < get_cost(upgrade_id):
+	var cost: int = get_cost(upgrade_id)
+	if get_current_level(upgrade_id) < get_max_level(upgrade_id) and GameData.total_money >= cost:
 		GameData.meta_upgrades[upgrade_id][1] += 1
-		GameData.total_money -= get_cost(upgrade_id)
+		GameData.total_money -= cost
 
 #region Getters
 func get_ui_name(id: int) -> String:
@@ -106,7 +109,10 @@ func get_description(id: int) -> String:
 	return upgrades_list[id][DESCRIPTION_ID]
 
 func get_cost(id: int) -> int:
-	return upgrades_list[id][COST_ID]
+	return upgrades_list[id][COST_ID] * pow(grow_factor, get_current_level(id))
+
+func get_current_level(upgrade_id: int) -> int:
+	return GameData.meta_upgrades[upgrade_id][1]
 
 func get_max_level(id: int) -> int:
 	return upgrades_list[id][MAX_LEVEL_ID]

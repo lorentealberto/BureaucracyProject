@@ -7,6 +7,6 @@ script = ExtResource("1_3s64a")
 ui_name = "Handsome Guy"
 base_stat = 3
 cost = 1.0
-max_value = 10
+max_value = 100
 bonus = 0.5
 metadata/_custom_type_script = "uid://4dr1k74vdfqo"
