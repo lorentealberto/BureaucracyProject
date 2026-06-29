@@ -22,6 +22,11 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dcfp"]
+bg_color = Color(0.78, 1, 0.83133334, 1)
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgokm"]
 draw_center = false
 corner_radius_top_left = 32
@@ -61,6 +66,8 @@ Label/fonts/font = ExtResource("1_rrfxt")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_keqi6")
 description_label/base_type = &"Label"
 description_label/font_sizes/font_size = 24
+enough_money/base_type = &"Button"
+enough_money/styles/hover = SubResource("StyleBoxFlat_3dcfp")
 level_progress/base_type = &"ProgressBar"
 level_progress/styles/background = SubResource("StyleBoxFlat_pgokm")
 level_progress/styles/fill = SubResource("StyleBoxFlat_7mpy8")

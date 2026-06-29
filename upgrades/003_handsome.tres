@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://c6wuu5y6xqhml"]
+
+[ext_resource type="Script" uid="uid://4dr1k74vdfqo" path="res://upgrades/upgrade.gd" id="1_3s64a"]
+
+[resource]
+script = ExtResource("1_3s64a")
+ui_name = "Handsome Guy"
+base_stat = 3
+cost = 1.0
+max_value = 10
+bonus = 0.5
+metadata/_custom_type_script = "uid://4dr1k74vdfqo"

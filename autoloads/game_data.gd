@@ -1,6 +1,6 @@
 extends Node
 
-var total_money: int = 234234
+var total_money: int = 0
 var meta_upgrades: Array[Array]
 
 
