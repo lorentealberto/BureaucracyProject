@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dmvwqmh0j0rxa" path="res://assets/graphics/first_background.png" id="1_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://d03ndhiqdhkx0" path="res://assets/graphics/central_panel.png" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://ds1x7xdt4uv3v" path="res://scripts/gameplay/xp_points.gd" id="3_og1vs"]
 [ext_resource type="Texture2D" uid="uid://cpolx21xyfsag" path="res://assets/graphics/left_panel.png" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://cl2e8as65mrrk" path="res://assets/graphics/right_panel/panel.png" id="4_muem4"]
 [ext_resource type="Theme" uid="uid://de2e0xv0xu1ui" path="res://assets/themes/main.tres" id="4_pm3ni"]
@@ -24,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://4c0cnjqtba1e" path="res://assets/graphics/man.png" id="12_pm3ni"]
 [ext_resource type="Texture2D" uid="uid://dge4uomlkxuy2" path="res://assets/graphics/right_panel/desktop.png" id="17_0ld40"]
 [ext_resource type="Texture2D" uid="uid://4xrfknen600e" path="res://assets/graphics/hand.png" id="19_y6deb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wyq8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ld40"]
 radius = 19.0
@@ -94,6 +97,33 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
 [node name="Layout" type="Node2D" parent="." unique_id=516062755]
+
+[node name="XPUI" type="CanvasLayer" parent="Layout" unique_id=443974864]
+
+[node name="XPPanel" type="PanelContainer" parent="Layout/XPUI" unique_id=551934620]
+anchors_preset = -1
+anchor_left = 0.134375
+anchor_top = 0.08981481
+anchor_right = 0.43697917
+anchor_bottom = 0.2537037
+theme = ExtResource("4_pm3ni")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2wyq8")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Layout/XPUI/XPPanel" unique_id=786684369]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Layout/XPUI/XPPanel/HBoxContainer" unique_id=764213043]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 92
+text = "XP"
+
+[node name="XPPoints" type="Label" parent="Layout/XPUI/XPPanel/HBoxContainer" unique_id=1576824305]
+layout_mode = 2
+theme_override_font_sizes/font_size = 92
+text = "0000"
+script = ExtResource("3_og1vs")
 
 [node name="CentralPanel" type="Sprite2D" parent="Layout" unique_id=2137173474]
 position = Vector2(960, 540)
