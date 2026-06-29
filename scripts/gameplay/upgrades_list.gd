@@ -8,6 +8,7 @@ func _setup_buttons() -> void:
 	for i: int in UpgradesData.upgrades_list.size():
 			var button: BuyUpgradeButton = buy_upgrade_button_scene.instantiate()
 			add_child(button)
+			button.id = i
 			button.set_title(i) #1
 			button.set_description(i) #2
 			button.set_price(i)

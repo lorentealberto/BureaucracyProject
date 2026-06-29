@@ -8,6 +8,11 @@ class_name BuyUpgradeButton
 @onready var button: Button = %Button
 
 var _price: float
+var id: int = -1
+
+func _ready() -> void:
+	button.valid_transaction.connect(_on_valid_transaction)
+
 
 func set_title(upgrade_id: int) -> void:
 	title.text = str(UpgradesData.get_ui_name(upgrade_id))
@@ -26,5 +31,10 @@ func set_level(upgrade_id: int) -> void:
 	level.max_value = max_level
 	level.value = min(GameData.get_current_level(upgrade_id), max_level)
 
-#El botón se pondrá en rojo si no se tiene suficiente dinero para comprar el upgrade.
-#Si se puede, se pondrá en verde
+func update_ui() -> void:
+	set_level(id)
+	set_price(id)
+
+func _on_valid_transaction() -> void:
+	UpgradesData.increase_level(id)
+	update_ui()

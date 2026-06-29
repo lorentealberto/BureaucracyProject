@@ -93,6 +93,11 @@ func _process_upgrade_file(base_path: String, file_name: String) -> Array:
 	return data
 #endregion
 
+func increase_level(upgrade_id: int) -> void:
+	if GameData.meta_upgrades[upgrade_id][1] < get_max_level(upgrade_id) or GameData.total_money < get_cost(upgrade_id):
+		GameData.meta_upgrades[upgrade_id][1] += 1
+		GameData.total_money -= get_cost(upgrade_id)
+
 #region Getters
 func get_ui_name(id: int) -> String:
 	return upgrades_list[id][UI_NAME_ID]
