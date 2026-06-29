@@ -12,6 +12,9 @@ var id: int = -1
 
 func _ready() -> void:
 	button.valid_transaction.connect(_on_valid_transaction)
+	button.hover.connect(_on_hover)
+	button.unhover.connect(_on_unhover)
+	pivot_offset_ratio = Vector2(0.5, 0.5)
 
 
 func set_title(upgrade_id: int) -> void:
@@ -39,3 +42,11 @@ func _on_valid_transaction() -> void:
 	Events.upgrade_bought.emit()
 	UpgradesData.increase_level(id)
 	update_ui()
+
+func _on_hover() -> void:
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.025, 1.025), 0.1)
+
+func _on_unhover() -> void:
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1, 1), 0.1)

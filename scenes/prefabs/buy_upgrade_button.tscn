@@ -4,6 +4,66 @@
 [ext_resource type="Script" uid="uid://b2ceoxis1w1f0" path="res://scripts/gameplay/buy_button.gd" id="2_qa4ox"]
 [ext_resource type="PackedScene" uid="uid://cdk68vylwpntb" path="res://scenes/effects/audio/selected_fx.tscn" id="3_vf0m5"]
 
+[sub_resource type="Animation" id="Animation_vf0m5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset_transform_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ngxs5"]
+resource_name = "appear"
+length = 0.3
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_frtjg"]
+_data = {
+&"RESET": SubResource("Animation_vf0m5"),
+&"appear": SubResource("Animation_ngxs5")
+}
+
 [node name="BuyUpgradeButton" type="PanelContainer" unique_id=1627976743]
 custom_minimum_size = Vector2(0, 110)
 anchors_preset = 15
@@ -11,6 +71,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 0)
 script = ExtResource("1_l31x8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1140608194]
@@ -82,3 +144,7 @@ theme_type_variation = &"level_progress"
 max_value = 10.0
 value = 5.0
 show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2058021115]
+libraries/ = SubResource("AnimationLibrary_frtjg")
+autoplay = &"appear"

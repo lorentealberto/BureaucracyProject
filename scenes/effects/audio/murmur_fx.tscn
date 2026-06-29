@@ -5,7 +5,7 @@
 
 [node name="MurmurFX" type="AudioStreamPlayer" unique_id=988177085]
 stream = ExtResource("1_83eqk")
-volume_db = -18.0
+volume_db = -20.0
 autoplay = true
 bus = &"Sounds"
 script = ExtResource("2_e5ue4")
