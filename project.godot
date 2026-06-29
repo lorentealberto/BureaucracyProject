@@ -19,8 +19,8 @@ config/icon="uid://br0pb0ac3wb5g"
 [autoload]
 
 Events="*uid://bcarfpri8alnn"
-GameData="*uid://duqbpedg8emj5"
 UpgradesData="*uid://bsv373wqneoop"
+GameData="*uid://bqb1ww2m7hktv"
 
 [debug]
 
